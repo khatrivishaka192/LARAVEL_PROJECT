@@ -2,7 +2,7 @@
 @extends('admin.layout')
 
 @section('content')
-    <h3>Add Category</h3>
+    <h3 style="color:#ff4fa7; font-weight:600; margin-bottom:20px;">Add Category</h3>
 
     <form action="{{ route('admin.categories.store') }}" method="POST">
         @csrf

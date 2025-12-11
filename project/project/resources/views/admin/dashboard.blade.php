@@ -3,42 +3,51 @@
 
 @section('content')
 
-    <h2 class="mb-4 text-center">Welcome Admin</h2>
+    <h2 class="mb-4 text-center" style="color: #ff4fa7;">Welcome Admin</h2>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center g-4">
 
         <!-- Cakes Module -->
-        <div class="col-md-4">
-            <div class="card shadow text-center p-3">
-                <h4>Cakes Module</h4>
-                <p>Manage all cakes</p>
-                <a href="{{ route('admin.cakes.index') }}" class="btn btn-primary">Go to Cakes</a>
+        <div class="col-md-5">
+            <div class="card shadow text-center p-3" style="border: 1px solid #ffeaf3; border-radius:10px;">
+                <h5 style="color: #ff4fa7; font-weight:600;">Cakes Module</h5>
+                <p class="mb-3" style="font-size:0.95rem;">Manage all cakes</p>
+                <a href="{{ route('admin.cakes.index') }}" class="btn"
+                   style="background-color: #ff4fa7; color: #fff; border-radius: 6px; font-size:0.9rem; padding:5px 12px;">Go to Cakes</a>
             </div>
         </div>
 
         <!-- Orders Module -->
-        <div class="col-md-4">
-            <div class="card shadow text-center p-3">
-                <h4>Orders Module</h4>
-                <p>View and manage orders</p>
-                <a href="{{ route('admin.orders.index') }}" class="btn btn-success">Go to Orders</a>
+        <div class="col-md-5">
+            <div class="card shadow text-center p-3" style="border: 1px solid #ffeaf3; border-radius:10px;">
+                <h5 style="color: #ff4fa7; font-weight:600;">Orders Module</h5>
+                <p class="mb-3" style="font-size:0.95rem;">View and manage orders</p>
+                <a href="{{ route('admin.orders.index') }}" class="btn"
+                   style="background-color: #ff4fa7; color: #fff; border-radius: 6px; font-size:0.9rem; padding:5px 12px;">Go to Orders</a>
             </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card shadow p-4 text-center">
-                <h4>Categories Module</h4>
-                <p>Manage all categories</p>
-                <a href="{{ route('admin.categories.index') }}" class="btn btn-warning">Go to Categories</a>
+        <!-- Categories Module -->
+        <div class="col-md-5">
+            <div class="card shadow text-center p-3" style="border: 1px solid #ffeaf3; border-radius:10px;">
+                <h5 style="color: #ff4fa7; font-weight:600;">Categories Module</h5>
+                <p class="mb-3" style="font-size:0.95rem;">Manage all categories</p>
+                <a href="{{ route('admin.categories.index') }}" class="btn"
+                   style="background-color: #ff4fa7; color: #fff; border-radius: 6px; font-size:0.9rem; padding:5px 12px;">Go to Categories</a>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card shadow p-4 text-center">
-                <h4>Contact Module</h4>
-                <p>Manage Contacts</p>
-                <a href="{{ route('admin.contacts.index') }}" class="btn btn-warning">Go to Categories</a>
+
+        <!-- Contact Module -->
+        <div class="col-md-5">
+            <div class="card shadow text-center p-3" style="border: 1px solid #ffeaf3; border-radius:10px;">
+                <h5 style="color: #ff4fa7; font-weight:600;">Contact Module</h5>
+                <p class="mb-3" style="font-size:0.95rem;">Manage Contacts</p>
+                <a href="{{ route('admin.contacts.index') }}" class="btn"
+                   style="background-color: #ff4fa7; color: #fff; border-radius: 6px; font-size:0.9rem; padding:5px 12px;">Go to Contacts</a>
             </div>
         </div>
+
     </div>
 
 @endsection
+

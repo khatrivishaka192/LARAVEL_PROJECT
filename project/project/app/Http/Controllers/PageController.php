@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class PageController extends Controller {
@@ -11,8 +12,23 @@ class PageController extends Controller {
         return view('about');
     }
 
-    public function contactSubmit(Request $r) {
-        // temporary: just redirect back with success message
-        return back()->with('success','Message sent .');
+//    public function contactSubmit(Request $r) {
+//        // temporary: just redirect back with success message
+//        return back()->with('success','Message sent .');
+//    }
+
+    public function contactSubmit(Request $request) {
+        // validation
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required',
+        ]);
+
+        // save to database
+        Contact::create($request->only('name','email','message'));
+
+        // redirect back with success message
+        return back()->with('success','Message sent successfully!');
     }
 }

@@ -43,7 +43,8 @@
                         </div>
                     @endif
 
-                    <form action="{{ url('/contact') }}" method="POST">
+{{--                    <form action="{{ url('/contact') }}" method="POST">--}}
+                        <form action="{{ route('contact.submit') }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label fw-semibold text-pink">Full Name</label>

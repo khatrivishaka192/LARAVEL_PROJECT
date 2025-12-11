@@ -2,9 +2,13 @@
 @extends('admin.layout')
 
 @section('content')
-    <h3>Categories</h3>
+    <h3 style="color:#ff4fa7; font-weight:600; margin-bottom:20px;">Categories</h3>
 
-    <a href="{{ route('admin.categories.create') }}" class="btn btn-success mb-3">Add New Category</a>
+{{--    <a href="{{ route('admin.categories.create') }}" class="btn btn-success mb-3">Add New Category</a>--}}
+    <a href="{{ route('admin.categories.create') }}" class="btn"
+       style="background-color:#ff4fa7; color:#fff; border:none; border-radius:5px;">
+        Add New Category
+    </a>
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>

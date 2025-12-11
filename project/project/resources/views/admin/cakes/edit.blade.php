@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="mt-3">
-        <h2>Edit Cake</h2>
+        <h2 style="color:#ff4fa7; font-weight:600; margin-bottom:20px;">Edit Cake</h2>
         <form action="{{ route('admin.cakes.update', $cake->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
@@ -37,7 +37,10 @@
                 <label>Ingredients</label>
                 <textarea name="ingredients" class="form-control">{{ $cake->ingredients }}</textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Update Cake</button>
+            <button type="submit" class="btn"
+                    style="background-color:#ff4fa7; color:#fff; border:none; border-radius:5px; padding:6px 15px;">
+                Update Cake
+            </button>
         </form>
     </div>
 @endsection

@@ -18,11 +18,7 @@ class CakeController extends Controller
         return view('admin.cakes.index', compact('cakes'));
     }
 
-    // Show create form
-//    public function create() {
-//        $categories = Category::all();
-//        return view('admin.cakes.create');
-//    }
+
     public function create()
     {
         $categories = Category::all(); // <-- VERY IMPORTANT
@@ -34,13 +30,7 @@ class CakeController extends Controller
     // Store new cake
     // Store new cake
     public function store(Request $request) {
-        //$data = $request->validate([
-//            'name' => 'required|string',
-//            'category' => 'required|in:regular,customized,wedding',
-//            'price' => 'required|numeric',
-//            'image' => 'required|image',
-//            'description' => 'nullable|string',
-//            'ingredients' => 'nullable|string',
+
             $data = $request->validate([
                 'name' => 'required|string',
                 'category_id' => 'required|exists:categories,id',

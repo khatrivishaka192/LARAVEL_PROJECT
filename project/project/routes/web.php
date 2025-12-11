@@ -29,9 +29,11 @@ Route::get('/cakes/{category?}', [FrontCakeController::class, 'index'])
     ->name('frontend.cakes.index')
     ->where('category', 'all|regular|customized|wedding');
 
-Route::get('/cake/{id}', [FrontCakeController::class, 'show'])->name('frontend.cakes.show');
-Route::get('/cakes/search', [FrontCakeController::class, 'search'])->name('frontend.cakes.search');
 
+
+Route::get('/ajax-search', [FrontCakeController::class, 'ajaxSearch'])->name('ajax.search');
+Route::get('/cakes/search', [FrontCakeController::class, 'search'])->name('frontend.cakes.search');
+Route::get('/cake/{id}', [FrontCakeController::class, 'show'])->name('frontend.cakes.show');
 // Cart
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');

@@ -1,4 +1,4 @@
-<?php
+
 @extends('admin.layout')
 
 @section('content')

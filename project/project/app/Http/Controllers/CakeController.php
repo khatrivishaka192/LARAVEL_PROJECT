@@ -180,19 +180,30 @@ class CakeController extends Controller
 
 
     // Show single cake
+
+    // Search cakes
+    public function ajaxSearch(Request $request)
+    {
+        $query = $request->query('query');
+        $cakes = Cake::where('name', 'LIKE', "%{$query}%")
+            ->orWhere('description', 'LIKE', "%{$query}%")
+            ->get();
+        return response()->json($cakes);
+    }
+    public function search(Request $request)
+    {
+        $query = $request->query('query');
+        $cakes = Cake::where('name', 'LIKE', "%{$query}%")
+            ->orWhere('description', 'LIKE', "%{$query}%")
+            ->get();
+        return view('cakes.index', compact('cakes'));
+    }
     public function show($id)
     {
         $cake = Cake::findOrFail($id);
         return view('cakes.show', compact('cake'));
     }
 
-    // Search cakes
-    public function search(Request $request)
-    {
-        $query = $request->input('q', '');
-        $cakes = Cake::where('name', 'LIKE', "%$query%")->get();
-        return view('cakes.search', compact('cakes', 'query'));
-    }
 
     // Add to cart
     public function add(Request $request)

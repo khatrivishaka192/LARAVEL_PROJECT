@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Admin Login</h2>
+    <h2 style="color:#ff4fa7; font-weight:600; margin-bottom:20px; " class="text-center mb-4">Admin Login</h2>
 
     <!-- Show login error (wrong email/password) -->
     @if(session('error'))
@@ -35,7 +35,11 @@
             <label for="password" class="form-label">Password</label>
             <input type="password" name="password" id="password" class="form-control" placeholder="password">
         </div>
-        <button type="submit" class="btn btn-primary w-100">Login</button>
+        <button type="submit" class="btn"
+                style="background-color:#ff4fa7; color:#fff; border:none; border-radius:5px; padding:8px 15px;">
+            Login
+        </button>
+
     </form>
 </div>
 </body>
