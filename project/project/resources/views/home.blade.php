@@ -26,56 +26,48 @@
         </div>
     </section>
 
-
     <!-- 🍰 Featured Cakes Section -->
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-4 text-pink">Best Sellers</h2>
             <div class="row g-4">
-                <div class="col-sm-6 col-md-4">
-                    <a href="{{ url('/cake/1') }}" class="text-decoration-none text-dark">
-                        <div class="card h-100 shadow-sm border-0 rounded-4 clickable-card">
-                            <img src="{{ asset('images/cake1.jpg') }}" class="card-img-top" alt="Chocolate Bliss">
-                            <div class="card-body text-center">
-                                <h5 class="card-title text-pink">Chocolate Bliss</h5>
-                                <p class="text-muted">Rich chocolate layers with silky ganache.</p>
-                                <p class="fw-bold">PKR 2000</p>
-                                <span class="btn btn-outline-pink btn-sm mt-2">View Details</span>
-                            </div>
-                        </div>
-                    </a>
 
+                <!-- Chocolate Bliss -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="card h-100 shadow-sm border-0 rounded-4">
+                        <img src="{{ asset('images/cake1.jpg') }}" class="card-img-top" alt="Chocolate Bliss">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-pink">Chocolate Bliss</h5>
+                            <p class="text-muted">Rich chocolate layers with silky ganache.</p>
+                            <p class="fw-bold">Rs 2000</p>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- 🍦 Vanilla Dream -->
+                <!-- Vanilla Dream -->
                 <div class="col-sm-6 col-md-4">
-                    <a href="{{ url('/cake/2') }}" class="text-decoration-none text-dark">
-                        <div class="card h-100 shadow-sm border-0 rounded-4 clickable-card">
-                            <img src="{{ asset('images/vanilla.jpg') }}" class="card-img-top" alt="Vanilla Dream">
-                            <div class="card-body text-center">
-                                <h5 class="card-title text-pink">Vanilla Dream</h5>
-                                <p class="text-muted">Classic vanilla sponge with buttercream.</p>
-                                <p class="fw-bold">PKR 1800</p>
-{{--                                <span class="btn btn-outline-pink btn-sm mt-2">View Details</span>--}}
-                            </div>
+                    <div class="card h-100 shadow-sm border-0 rounded-4">
+                        <img src="{{ asset('images/vanilla.jpg') }}" class="card-img-top" alt="Vanilla Dream">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-pink">Vanilla Dream</h5>
+                            <p class="text-muted">Classic vanilla sponge with buttercream.</p>
+                            <p class="fw-bold">Rs 1800</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
 
-                <!-- 🍓 Strawberry Heaven -->
+                <!-- Strawberry Heaven -->
                 <div class="col-sm-6 col-md-4">
-                    <a href="{{ url('/cake/3') }}" class="text-decoration-none text-dark">
-                        <div class="card h-100 shadow-sm border-0 rounded-4 clickable-card">
-                            <img src="{{ asset('images/strawberry.jpg') }}" class="card-img-top" alt="Strawberry Heaven">
-                            <div class="card-body text-center">
-                                <h5 class="card-title text-pink">Strawberry Heaven</h5>
-                                <p class="text-muted">Soft vanilla cake topped with strawberries.</p>
-                                <p class="fw-bold">PKR 2200</p>
-{{--                                <span class="btn btn-outline-pink btn-sm mt-2">View Details</span>--}}
-                            </div>
+                    <div class="card h-100 shadow-sm border-0 rounded-4">
+                        <img src="{{ asset('images/strawberry.jpg') }}" class="card-img-top" alt="Strawberry Heaven">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-pink">Strawberry Heaven</h5>
+                            <p class="text-muted">Soft vanilla cake topped with strawberries.</p>
+                            <p class="fw-bold">Rs 2200</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>

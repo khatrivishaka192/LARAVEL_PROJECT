@@ -11,6 +11,9 @@
             <input type="text" name="name" class="form-control">
         </div>
 
-        <button class="btn btn-primary">Save</button>
+        <button type="submit" class="btn"
+                style="background-color:#ff4fa7; color:#fff; border:none; border-radius:5px; padding:6px 15px;">
+            Save
+        </button>
     </form>
 @endsection

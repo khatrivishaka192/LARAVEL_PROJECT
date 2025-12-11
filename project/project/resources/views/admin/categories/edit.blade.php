@@ -2,7 +2,7 @@
 @extends('admin.layout')
 
 @section('content')
-    <h3>Edit Category</h3>
+    <h3 style="color:#ff4fa7; font-weight:600; margin-bottom:20px;>Edit Category</h3>
 
     <form action="{{ route('admin.categories.update', $category->id) }}" method="POST">
         @csrf

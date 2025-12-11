@@ -47,15 +47,15 @@
                         <label class="form-label fw-semibold">Select Pound</label>
                         <select name="price" class="form-select">
                             <option value="{{ $cake->price }}">
-                                1 lb - Rs {{ $cake->price }}
+                                1 pound - Rs {{ $cake->price }}
                             </option>
 
                             <option value="{{ $cake->price * 2 }}">
-                                2 lb - Rs {{ $cake->price * 2 }}
+                                2 pound - Rs {{ $cake->price * 2 }}
                             </option>
 
                             <option value="{{ $cake->price * 3 }}">
-                                3 lb - Rs {{ $cake->price * 3 }}
+                                3 pound - Rs {{ $cake->price * 3 }}
                             </option>
                         </select>
                     </div>

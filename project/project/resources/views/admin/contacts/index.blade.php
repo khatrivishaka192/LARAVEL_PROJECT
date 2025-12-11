@@ -25,11 +25,19 @@
                 <td>{{ $contact->email }}</td>
                 <td>{{ Str::limit($contact->message, 50) }}</td>
                 <td>
-                    <a href="{{ route('admin.contacts.show', $contact->id) }}" class="btn btn-info btn-sm">View</a>
+
+                    <a href="{{ route('admin.contacts.show', $contact->id) }}"
+                       class="btn btn-sm"
+                       style="background:#ffb6d9; color:#6b0031; border-radius:8px; font-weight:600;">
+                        🍰 View
+                    </a>
                     <form action="{{ route('admin.contacts.destroy', $contact->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-danger btn-sm">Delete</button>
+                        <button type="submit" class="btn"
+                                style="background-color:#ff4fa7; color:#fff; border:none; border-radius:5px; padding:6px 15px;">
+                            Delete
+                        </button>
                     </form>
                 </td>
             </tr>

@@ -54,7 +54,7 @@
 
 @section('content')
 
-    <h2>Order #{{ $order->id }}</h2>
+    <h2 style="color:#ff4fa7; font-weight:600; margin-bottom:20px;">Order #{{ $order->id }}</h2>
 
     <!-- Customer Info -->
     <p><strong>Customer Name:</strong> {{ $order->customer_name }}</p>
@@ -101,7 +101,11 @@
             <option value="completed" @if($order->status=='completed') selected @endif>Completed</option>
             <option value="canceled" @if($order->status=='canceled') selected @endif>Canceled</option>
         </select>
-        <button type="submit" class="btn btn-success">Update Status</button>
+{{--        <button type="submit" class="btn btn-success">Update Status</button>--}}
+        <button type="submit" class="btn"
+                style="background-color:#ff4fa7; color:#fff; border:none; border-radius:5px; padding:6px 15px;">
+            Update Status
+        </button>
     </form>
 
 @endsection

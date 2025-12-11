@@ -4,7 +4,8 @@
 @section('content')
     <div class="mt-3">
         <a href="{{ route('admin.cakes.create') }}" class="btn"
-           style="background-color:#ff4fa7; color:#fff; border:none; border-radius:5px;">
+           style="background-color:#ff4fa7; color:#fff; border:none; border-radius:5px padding:8px 18px;
+              font-weight:600; margin-bottom:15px; display:inline-block;">
             Add New Cake
         </a>
 

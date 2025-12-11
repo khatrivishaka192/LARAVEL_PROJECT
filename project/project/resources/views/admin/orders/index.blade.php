@@ -1,86 +1,15 @@
-{{--@extends('admin.layout')--}}
 
-{{--@section('content')--}}
-
-{{--    <h3>All Orders</h3>--}}
-
-{{--    @if(session('success'))--}}
-{{--        <div class="alert alert-success">{{ session('success') }}</div>--}}
-{{--    @endif--}}
-
-{{--    <table class="table table-bordered text-center align-middle">--}}
-{{--        <thead class="table-dark">--}}
-{{--        <tr>--}}
-{{--            <th>ID</th>--}}
-{{--            <th>User</th>--}}
-{{--            <th>Cake</th>--}}
-{{--            <th>Quantity</th>--}}
-{{--            <th>Total Price</th>--}}
-{{--            <th>Status</th>--}}
-{{--        </tr>--}}
-{{--        </thead>--}}
-
-{{--        <tbody>--}}
-{{--        @foreach($orders as $order)--}}
-{{--            <tr>--}}
-{{--                <td>{{ $order->id }}</td>--}}
-{{--                <td>{{ $order->customer_name }}</td>--}}
-{{--                <td>PKR {{ $order->total }}</td>--}}
-{{--                <td>{{ $order->status }}</td>--}}
-{{--                <td>--}}
-{{--                    <a href="{{ route('admin.orders.show', $order->id) }}" class="btn btn-primary btn-sm">View</a>--}}
-{{--                    <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST" style="display:inline">--}}
-{{--                        @csrf--}}
-{{--                        @method('DELETE')--}}
-{{--                        <button class="btn btn-danger btn-sm" onclick="return confirm('Delete this order?')">Delete</button>--}}
-{{--                    </form>--}}
-{{--                </td>--}}
-{{--            </tr>--}}
-{{--        @endforeach--}}
-
-{{--        </tbody>--}}
-
-{{--    </table>--}}
-
-{{--@endsection--}}
 @extends('admin.layout')
 
 @section('content')
 
-    <h3>All Orders</h3>
+    <h3 style="color:#ff4fa7; font-weight:600; margin-bottom:20px;">All Orders</h3>
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-{{--    <table class="table table-bordered">--}}
-{{--        <thead>--}}
-{{--        <tr>--}}
-{{--            <th>Order ID</th>--}}
-{{--            <th>Customer</th>--}}
-{{--            <th>Cake Name</th>--}}
-{{--            <th>Quantity</th>--}}
-{{--            <th>Price</th>--}}
-{{--            <th>Subtotal</th>--}}
-{{--            <th>Status</th>--}}
-{{--        </tr>--}}
-{{--        </thead>--}}
-{{--        <tbody>--}}
-{{--        @foreach($orders as $order) <!-- Loop through all orders -->--}}
-{{--        @foreach($order->items as $item) <!-- Loop through items of each order -->--}}
-{{--        <tr>--}}
-{{--            <td>{{ $order->id }}</td>--}}
-{{--            <td>{{ $order->customer_name }}</td>--}}
-{{--            <td>{{ $item->cake_name }}</td>--}}
-{{--            <td>{{ $item->quantity }}</td>--}}
-{{--            <td>${{ number_format($item->price, 2) }}</td>--}}
-{{--            <td>${{ number_format($item->subtotal, 2) }}</td>--}}
-{{--            <td>{{ $order->status }}</td>--}}
-{{--        </tr>--}}
-{{--        @endforeach--}}
-{{--        @endforeach--}}
-{{--        </tbody>--}}
-{{--    </table>--}}
+
     <table class="table">
         <thead>
         <tr>
@@ -111,17 +40,30 @@
                     </form>
                 </td>
 
-                <td>
-                    <a href="{{ route('admin.orders.show', $order->id) }}" class="btn btn-primary btn-sm">View</a>
 
-                    <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST" class="d-inline">
+                <td class="d-flex gap-2">
+
+                    {{-- View Button --}}
+                    <a href="{{ route('admin.orders.show', $order->id) }}"
+                       class="btn btn-sm px-3"
+                       style="background:#ffb6c1; color:#6b0031; border-radius:10px; font-weight:600; border:none;">
+                        <i class="fa fa-eye"></i> View
+                    </a>
+
+                    {{-- Delete Button --}}
+                    <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">
-                            Delete
+
+                        <button onclick="return confirm('Are you sure?')"
+                                class="btn btn-sm px-3"
+                                style="background:#ff6f91; color:white; border-radius:10px; font-weight:600; border:none;">
+                            <i class="fa fa-trash"></i> Delete
                         </button>
                     </form>
+
                 </td>
+
             </tr>
         @endforeach
         </tbody>
