@@ -32,12 +32,18 @@ class CakeController extends Controller
     public function store(Request $request) {
 
             $data = $request->validate([
-                'name' => 'required|string',
-                'category_id' => 'required|exists:categories,id',
-                'price' => 'required|numeric',
-                'image' => 'required|image',
-                'description' => 'nullable|string',
-                'ingredients' => 'nullable|string',
+//                'name' => 'required|string',
+//                'category_id' => 'required|exists:categories,id',
+//                'price' => 'required|numeric',
+//                'image' => 'required|image',
+//                'description' => 'nullable|string',
+//                'ingredients' => 'nullable|string',
+                'name' => 'required|string|max:255',
+                'category_id' => 'required|integer|exists:categories,id',
+                'price' => 'required|numeric|min:1',
+                'image' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'description' => 'required|string|min:10',
+                'ingredients' => 'required|string|min:5',
         ]);
 
         // Upload image

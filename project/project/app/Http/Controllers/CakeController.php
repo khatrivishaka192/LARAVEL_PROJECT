@@ -146,24 +146,7 @@ use App\Models\Cake;
 
 class CakeController extends Controller
 {
-    // Show Cakes by category
-//    public function index($category = null)
-//    {
-//        $query = Cake::query();
-//
-////        if ($category && in_array($category, ['regular', 'customized', 'wedding'])) {
-////            $query->where('category', $category);
-////        }
-//        if ($category) {
-//            $query->whereHas('category', function ($q) use ($category) {
-//                $q->where('slug', $category);
-//            });
-//        }
-//
-//
-//        $cakes = $query->get(); // database se data fetch ho jayega
-//        return view('cakes.index', compact('cakes', 'category'));
-//    }
+
     public function index($category = null)
     {
         $query = Cake::query();

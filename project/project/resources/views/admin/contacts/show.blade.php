@@ -7,7 +7,6 @@
     <p><strong>Email:</strong> {{ $contact->email }}</p>
     <p><strong>Message:</strong><br>{{ $contact->message }}</p>
 
-{{--    <a href="{{ route('admin.contacts.index') }}" class="btn btn-secondary mt-3">Back</a>--}}
     <a href="{{ route('admin.contacts.index') }}"
        class="btn btn-sm"
        style="background:#ffb6d9; color:#6b0031; border-radius:8px; font-weight:600;">
