@@ -1,17 +1,16 @@
 <?php
 
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController;
+use App\Http\Controllers\Api\Admin\AdminAuthController;
+use App\Http\Controllers\Api\Admin\CakeController as AdminCakeController;
+use App\Http\Controllers\Api\Admin\CategoryController;
+use App\Http\Controllers\Api\Admin\ContactController;
+use App\Http\Controllers\Api\Admin\OrderController;
+use App\Http\Controllers\CakeController as FrontCakeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\CakeController as FrontCakeController;
-use App\Http\Controllers\Admin\AdminAuthController;
-use App\Http\Controllers\Admin\CakeController as AdminCakeController;
-use App\Http\Controllers\Admin\OrderController;
-use App\Http\Controllers\Admin\ContactController;
-use App\Http\Controllers\Admin\CategoryController;
-
+use App\Http\Controllers\PageController;
+use Illuminate\Support\Facades\Route;
 
 
 /*

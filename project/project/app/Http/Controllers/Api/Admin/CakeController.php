@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cake;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Models\Cake;
 
 class CakeController extends Controller
 {

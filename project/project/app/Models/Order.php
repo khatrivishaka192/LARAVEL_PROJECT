@@ -14,7 +14,7 @@ class Order extends Model
         'phone',
         'address',
         'total',
-        //'status',
+        'status',
     ];
 
 

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cake;
 use Illuminate\Http\Request;
-use App\Models\Cake; // Ensure Cake model exists
+
+// Ensure Cake model exists
 
 class ApiCakeController extends Controller
 {
