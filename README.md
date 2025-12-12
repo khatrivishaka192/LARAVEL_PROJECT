@@ -1,61 +1,197 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+ Cake Bliss — Sweetness of Your Happiness
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Cake Bliss is a web-based cake shop application built with **Laravel**, offering a modern and clean frontend for customers and a secure admin panel to manage categories, cakes, orders, and more. The project also includes **REST APIs** for admin operations using Sanctum authentication.
+Table of Contents
+Project Overview
+Features
+Tech stack
+Installation & Setup
+Environment Configuration
+Database Setup
+Running the Project
+API Authentication
+API Endpoints
+Folder Structure
+Usage Guide
+Contribution / Notes
 
-## About Laravel
+ 1. Project Overview
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Cake Bliss is an online cake store where users can explore cakes, check details, place orders, and search products.
+Administrators can log into the admin dashboard to manage:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+ Categories
+ Cakes
+ Orders
+ Users
+ API access
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The project supports Web + API structure, both cleanly separated.
 
-## Learning Laravel
+2.Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Customer Features (Frontend)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+ View cakes by category
+ View cake details
+ Search cakes
+ Add to cart & checkout
+ Order confirmation page
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+ Admin Features
 
-## Laravel Sponsors
+ Login & logout
+ Manage categories (CRUD)
+ Manage cakes (CRUD)
+ Manage orders
+ API control via Laravel Sanctum
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+ API Features
 
-### Premium Partners
+Token-based authentication
+Separate API controllers
+JSON-based CRUD responses
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3. Tech Stack
 
-## Contributing
+| Layer           | Technology       |
+| --------------- | ---------------- |
+| Backend         | Laravel 10+      |
+| Frontend        | Blade, Bootstrap |
+| Authentication  | Laravel   |
+| Database        | MySQL            |
+| Version Control | Git + GitHub     |
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+4.Installation & Setup
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Clone the project
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+git clone https://github.com/your-repo/cake-bliss.git
+cd cake-bliss
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+ Install dependencies
+
+
+composer install
+npm install
+npm run build
+
+5. Environment Configuration
+
+1. Duplicate .env.example
+2. Rename to .env
+3. Update database values:
+4. DB_DATABASE=cake_bliss
+   DB_USERNAME=root
+   DB_PASSWORD=
+    5. Generate app key
+php artisan key:generate
+
+6. Database Setup
+
+Run migrations:
+
+php artisan migrate
+
+
+7. Running the Project
+
+Start Laravel server:
+
+php artisan serve
+
+
+ Frontend → `http://localhost:8000`
+ Admin → `http://localhost:8000/admin/login`
+
+8. API Authentication (Sanctum)
+ Why Sanctum?
+
+Sanctum provides:
+
+ Secure API tokens
+ Admin-only access
+ No session required
+ Works perfectly with SPA / Postman
+
+ Install Sanctum (already done if included)
+
+
+composer require laravel/sanctum
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+php artisan migrate
+
+
+9. API Endpoints
+
+ Authentication
+
+| Method | Endpoint             | Description                |
+| ------ | -------------------- | -------------------------- |
+| POST   | `/api/admin/login`   | Admin login, returns token |
+| GET    | `/api/admin/me` | Get admin details          |
+
+
+Cake APIs
+
+| Method | Endpoint          | Description    |
+| ------ | ----------------- | -------------- |
+| GET    | `/api/cakes`      | List all cakes |
+| POST   | `/api/cakes`      | Create cake    |
+
+
+
+
+10. Folder Structure
+
+
+app/
+ ├── Http/
+ │    ├── Controllers/
+ │    │     ├── Admin/        → Admin web controllers
+ │    │     ├── Api/          → API controllers
+ │    │     └── Frontend/     → Public website controllers
+ ├── Models/
+resources/
+ ├── views/
+ ├── js/
+ ├── css/
+routes/
+ ├── web.php
+ ├── api.php
+
+
+11. Usage Guide
+
+Admin Login
+
+* Go to: `/admin/login`
+* Enter admin credentials (you can seed a default admin)
+
+Manage Categories
+
+* Admin Panel → Categories
+* Add, Edit, Delete
+
+Manage Cakes
+
+* Admin Panel → Cakes
+* Upload image
+* Assign category
+
+Search Function (Frontend)
+
+* Search bar → type “vanilla”, “chocolate”, etc.
+
+Placing Order
+
+Add to cart → Checkout → Confirm Order
+
+12. Notes / Contributing
+
+ Follow Laravel naming conventions
+ Keep controllers clean—use Services if project grows
+ For frontend API usage, use Axios / Fetch
