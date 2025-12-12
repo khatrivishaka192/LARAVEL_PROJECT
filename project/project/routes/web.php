@@ -12,6 +12,8 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\CategoryController;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | FRONTEND ROUTES
@@ -28,6 +30,8 @@ Route::view('/about', 'about')->name('about');
 Route::get('/cakes/{category?}', [FrontCakeController::class, 'index'])
     ->name('frontend.cakes.index')
     ->where('category', 'all|regular|customized|wedding');
+
+
 
 
 
