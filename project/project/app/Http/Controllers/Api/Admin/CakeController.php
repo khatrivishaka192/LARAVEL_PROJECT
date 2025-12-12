@@ -41,7 +41,7 @@ class CakeController extends Controller
                 'name' => 'required|string|max:255',
                 'category_id' => 'required|integer|exists:categories,id',
                 'price' => 'required|numeric|min:1',
-                'image' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'image' => 'required|image|mimes:jpg,jpeg,png,webp',
                 'description' => 'required|string|min:10',
                 'ingredients' => 'required|string|min:5',
         ]);
